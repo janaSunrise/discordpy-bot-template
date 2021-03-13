@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./logs:/bot/logs
+      - .:/bot:ro
+    tty: true
+    env_file:
+      - .env
+    restart: on-failure
+    networks:
+      - common-shared-network
+
+networks:
+  common-shared-network:
