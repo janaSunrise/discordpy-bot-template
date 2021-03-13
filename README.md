@@ -55,6 +55,10 @@ You need to import the logger, `from loguru import logger` and just start loggin
 forget closing it. I added a global session that can be used anywhere using the `self.bot.session` attribute
 and it's opening and closing is handled in the subclass.
 
+- Docker information: There is docker compose for multiple containers and services, like postgres, lavalink and 
+more. If you need help you can contact. There is also a script for waiting for services that makes life easier too.
+Customize it according to the services you use, and the waiting needed for it.
+
 ## Creating the bot on Discord
 
 1. Create bot on Discord's [bot portal](https://discord.com/developers/applications/)
