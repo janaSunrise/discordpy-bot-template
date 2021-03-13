@@ -10,4 +10,4 @@ loguru = "*"
 [dev-packages]
 
 [scripts]
-start = "pipenv run start"
+start = "python -m bot"

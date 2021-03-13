@@ -1,7 +1,7 @@
 import os
 
 # ---- About bot section ----
-COMMAND_PREFIX = os.getenv("COMMAND_PREFIX", "=")
+COMMAND_PREFIX = os.getenv("COMMAND_PREFIX", "!")
 
 branding = ""
 creator = ""
