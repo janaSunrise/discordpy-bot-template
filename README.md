@@ -19,7 +19,7 @@
 </p>
 
 <h3 align="center">
-  <a href="https://github.com/janaSunrise/HypixelIO/discordpy-bot-template">Report a bug</a>
+  <a href="https://github.com/janaSunrise/discordpy-bot-template/issues">Report a bug</a>
   <span> · </span>
   <a href="https://discord.gg/cSC5ZZwYGQ">Discord</a>
 </h3>
