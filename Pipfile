@@ -6,6 +6,10 @@ name = "pypi"
 [packages]
 "discord.py" = {extras = ["voice"], version = "*"}
 loguru = "*"
+humanize = "*"
+psutil = "*"
+jishaku = {git = "https://github.com/Gorialis/jishaku"}
+discord-ext-menus = {git = "https://github.com/Rapptz/discord-ext-menus"}
 
 [dev-packages]
 
