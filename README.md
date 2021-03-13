@@ -121,6 +121,10 @@ Be sure to leave a ⭐️ if you like the project!
 - [Official Documentation](https://discordpy.readthedocs.io/en/latest/)
 - [Raise an Issue](https://github.com/janaSunrise/discordpy-bot-template/issues)
 
+## License
+
+This project uses GPL v3. Please be sure to follow the rules and the license. For more info, check [here](https://www.gnu.org/licenses/gpl-3.0.en.html)
+
 <p align="center">
 
 Made by janaSunrise with ❤
