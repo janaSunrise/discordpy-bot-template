@@ -20,5 +20,6 @@ bot = Bot(
     heartbeat_timeout=150.0,
 )
 
+# -- Run when this file is invoked --
 if __name__ == "__main__":
     bot.run(TOKEN)

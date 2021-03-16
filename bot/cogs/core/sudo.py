@@ -115,7 +115,9 @@ class Sudo(*STANDARD_FEATURES, *OPTIONAL_FEATURES, Cog):
 
     @sudo.command(aliases=["status"])
     async def botstatus(self, ctx: Context, status: str, *, status_info: str) -> None:
-        """Change the status of the bot.
+        """
+        Change the status of the bot.
+
         `botstatus playing <new status>` - Change playing status
         `botstatus watching <new status>` - Change watching status
         `botstatus listening <new status>` - Change listening status
@@ -260,8 +262,7 @@ class Sudo(*STANDARD_FEATURES, *OPTIONAL_FEATURES, Cog):
             • Release: **`{uname.release}`**
             • Version: **`{uname.version}`**
             
-            • Machine: **`{uname.machine}`**
-            • Processor: **`{uname.processor}`**            
+            • Machine: **`{uname.machine}`**          
             """
         )
         embed.add_field(
@@ -294,8 +295,8 @@ class Sudo(*STANDARD_FEATURES, *OPTIONAL_FEATURES, Cog):
                 title="Cluster info",
                 description=textwrap.dedent(
                     f"""
-                Clusters IDs: `{self.bot.shard_ids}`
-                """
+                    Clusters IDs: `{self.bot.shard_ids}`
+                    """
                     + shard_info
                 ),
                 color=Color.blue(),

@@ -1,4 +1,3 @@
-import json
 import textwrap
 import typing as t
 
@@ -22,12 +21,11 @@ from bot import Bot
 
 class ErrorHandler(Cog):
     """This cog handles the errors invoked from commands."""
-
     def __init__(self, bot: Bot):
         self.bot = bot
 
+    @staticmethod
     async def error_embed(
-        self,
         ctx: Context,
         title: t.Optional[str] = None,
         description: t.Optional[str] = None,

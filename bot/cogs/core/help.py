@@ -181,15 +181,6 @@ class HelpCommand(BaseHelpCommand):
         return output
 
     async def _describe_command(self, command: Command) -> t.Tuple[str, str, str, str]:
-        """
-        Describe command in a meaningful syntax which can than be showed to
-        users to provide details about given command.
-        Returns a tuple of these variables:
-        1. `command_name`: the exact syntax (without prefix) used to call the command
-        2. `command_syntax`: contains the command name with prefix and the values command takes
-        3. `command_help`: the help docstring from given command
-        4. `aliases`: all aliases the command has, separated by comma
-        """
         if not await command.can_run(self.context):
             raise CheckFailure(
                 "You don't have permission to view help for this command."
@@ -279,12 +270,6 @@ class HelpCommand(BaseHelpCommand):
     async def _format_cog(
         self, cog: t.Optional[Cog], commands: t.Optional[t.List[Command]] = None
     ) -> t.Union[Embed, HelpPages]:
-        """
-        Format a help embed message for the given `cog`.
-        If `commands` are provided, they'll be used without any additional filtering,
-        otherwise commands will be detected from `cog` and filtered.
-        In case `cog` is None, a help embed will be made for `commands` as unclassified commands.
-        """
         if cog:
             cog_description = (
                 cog.description if cog.description else "No description provided"
@@ -377,6 +362,7 @@ class Help(Cog):
     def __init__(self, bot: Bot):
         self.bot = bot
         self.old_help_command = bot.help_command
+
         bot.help_command = HelpCommand()
 
     def cog_unload(self) -> None:

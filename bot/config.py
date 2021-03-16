@@ -3,8 +3,8 @@ import os
 # ---- About bot section ----
 COMMAND_PREFIX = os.getenv("COMMAND_PREFIX", "!")
 
-branding = ""
-creator = ""
+branding = ""  # Brand name for the bot
+creator = ""  # Name of the creator
 devs = []  # ID of the developers.
 
 # -- Logger configuration --
