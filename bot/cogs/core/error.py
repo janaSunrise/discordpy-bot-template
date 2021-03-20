@@ -264,3 +264,4 @@ class ErrorHandler(Cog):
             f"Exception {error.__repr__()} has occurred from "
             f"the message({ctx.message.content}) invoked by {ctx.author.id} in {ctx.guild.name}[{ctx.guild.id}]"
         )
+        raise error
