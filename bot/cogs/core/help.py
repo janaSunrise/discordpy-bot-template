@@ -165,10 +165,11 @@ class HelpCommand(BaseHelpCommand):
     def __init__(self):
         super().__init__(
             command_attrs={
-                "help": "Shows help for given command / all commands"}
+                "help": "Shows help for given command / all commands"
+            }
         )
 
-    def command_not_found(self, string):
+    def command_not_found(self, string: str) -> str:
         ctx = self.context
         output = f"No command called `{string}` found."
 
