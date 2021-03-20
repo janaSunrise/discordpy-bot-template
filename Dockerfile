@@ -1,4 +1,4 @@
-FROM python:3.8-slim
+FROM python:3.8-slim-buster
 
 # Configure Pipenv for running in container
 ENV PIPENV_HIDE_EMOJIS=1 \
