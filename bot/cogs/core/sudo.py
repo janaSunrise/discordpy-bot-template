@@ -10,8 +10,10 @@ from datetime import datetime
 
 import humanize
 import psutil
-from discord import (Activity, ActivityType, Color, DiscordException, Embed,
-                     Game, Status)
+from discord import (
+    Activity, ActivityType, Color, DiscordException, Embed,
+    Game, Status
+)
 from discord import __version__ as discord_version
 from discord.ext.commands import Cog, Context, group, is_owner
 from jishaku.cog import OPTIONAL_FEATURES, STANDARD_FEATURES
@@ -67,7 +69,7 @@ class Sudo(*STANDARD_FEATURES, *OPTIONAL_FEATURES, Cog):
         os.system("python -m pipenv run start")
 
     async def _manage_cog(
-        self, ctx: Context, process: str, extension: t.Optional[str] = None
+            self, ctx: Context, process: str, extension: t.Optional[str] = None
     ) -> None:
         from bot.core.loader import COGS
 

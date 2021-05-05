@@ -63,7 +63,7 @@ class HelpPages(EmbedPages):
 
     @staticmethod
     def _split_fields(
-        fields: t.List[field], initial_length: int = 0
+            fields: t.List[field], initial_length: int = 0
     ) -> t.List[t.List[field]]:
         split_fields = []
         index = 0
@@ -94,7 +94,7 @@ class HelpPages(EmbedPages):
 
     @staticmethod
     def _make_group_embeds(
-        split_messages: t.List[str], initial_embed: Embed
+            split_messages: t.List[str], initial_embed: Embed
     ) -> t.List[Embed]:
         embeds = []
         initial_embed.add_field(name="Subcommands:", value=split_messages[0])
@@ -115,7 +115,7 @@ class HelpPages(EmbedPages):
 
     @staticmethod
     def _make_cog_embeds(
-        fields: t.List[t.List[field]], initial_embed: Embed
+            fields: t.List[t.List[field]], initial_embed: Embed
     ) -> t.List[Embed]:
         embeds = []
         for fld in fields[0]:
@@ -137,7 +137,7 @@ class HelpPages(EmbedPages):
 
     @classmethod
     def split_group_commands(
-        cls, cmd_messages: t.List[str], initial_embed: Embed
+            cls, cmd_messages: t.List[str], initial_embed: Embed
     ) -> "HelpPages":
         """
         Automatically split the given group command messages into multiple embeds.
@@ -151,7 +151,7 @@ class HelpPages(EmbedPages):
 
     @classmethod
     def split_cog_commands(
-        cls, fields: t.List[field], initial_embed: Embed
+            cls, fields: t.List[field], initial_embed: Embed
     ) -> "HelpPages":
         split_fields = cls._split_fields(
             fields, len(initial_embed.description))
@@ -269,7 +269,7 @@ class HelpCommand(BaseHelpCommand):
         return embed
 
     async def _format_cog(
-        self, cog: t.Optional[Cog], commands: t.Optional[t.List[Command]] = None
+            self, cog: t.Optional[Cog], commands: t.Optional[t.List[Command]] = None
     ) -> t.Union[Embed, HelpPages]:
         if cog:
             cog_description = (
@@ -316,7 +316,7 @@ class HelpCommand(BaseHelpCommand):
         return embed
 
     async def send_bot_help(
-        self, mapping: t.Dict[t.Optional[Cog], t.List[Command]]
+            self, mapping: t.Dict[t.Optional[Cog], t.List[Command]]
     ) -> None:
         """Send general bot help."""
         sorted_cogs = sorted(

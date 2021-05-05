@@ -58,11 +58,9 @@ class Bot(AutoShardedBot):
         for extension in loader.COGS:
             try:
                 self.load_extension(extension)
-                logger.info(f"Cog {extension} loaded.")
+                logger.info(f"Extension loaded: {extension}.")
             except Exception as exc:
-                logger.error(
-                    f"Cog {extension} failed to load with {type(exc)}: {exc!r}"
-                )
+                logger.error(f"Cog {extension} failed to load with {type(exc)}: {exc!r}")
                 raise exc  # Raise to get proper info about the exception.
 
     async def on_ready(self) -> None:
@@ -71,9 +69,9 @@ class Bot(AutoShardedBot):
             self.initial_call = False
             await self.load_extensions()
 
-            logger.info("Bot is ready")
+            logger.info("Bot is ready.")
         else:
-            logger.info("Bot connection reinitialized")
+            logger.info("Bot connection reinitialized.")
 
     def run(self, token: t.Optional[str]) -> None:
         """Run the bot and add missing token check."""
@@ -87,6 +85,7 @@ class Bot(AutoShardedBot):
         self.session = aiohttp.ClientSession()
 
         await super().start(*args, **kwargs)
+        logger.info("Successfully connected to discord.")
 
     async def close(self) -> None:
         """Close the bot and do some cleanup."""
@@ -96,3 +95,4 @@ class Bot(AutoShardedBot):
             await self.session.close()
 
         await super().close()
+        logger.info("Bot successfully closed.")
