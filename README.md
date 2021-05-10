@@ -123,7 +123,7 @@ Be sure to leave a ⭐️ if you like the project!
 
 ## License
 
-This project uses GPL v3. Please be sure to follow the rules and the license. For more info, check [here](https://www.gnu.org/licenses/gpl-3.0.en.html)
+This project uses Apache 2.0. Please be sure to follow the rules and the license.
 
 <p align="center">
 
