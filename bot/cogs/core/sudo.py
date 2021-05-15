@@ -10,10 +10,7 @@ from datetime import datetime
 
 import humanize
 import psutil
-from discord import (
-    Activity, ActivityType, Color, DiscordException, Embed,
-    Game, Status
-)
+from discord import Activity, ActivityType, Color, DiscordException, Embed, Game, Status
 from discord import __version__ as discord_version
 from discord.ext.commands import Cog, Context, group, is_owner
 from jishaku.cog import OPTIONAL_FEATURES, STANDARD_FEATURES
@@ -69,7 +66,7 @@ class Sudo(*STANDARD_FEATURES, *OPTIONAL_FEATURES, Cog):
         os.system("python -m pipenv run start")
 
     async def _manage_cog(
-            self, ctx: Context, process: str, extension: t.Optional[str] = None
+        self, ctx: Context, process: str, extension: t.Optional[str] = None
     ) -> None:
         from bot.core.loader import COGS
 
@@ -149,8 +146,7 @@ class Sudo(*STANDARD_FEATURES, *OPTIONAL_FEATURES, Cog):
         elif status.lower() == "watching":
             try:
                 await self.bot.change_presence(
-                    activity=Activity(
-                        type=ActivityType.watching, name=status_info)
+                    activity=Activity(type=ActivityType.watching, name=status_info)
                 )
                 await ctx.send(
                     f"Successfully changed watching status to **{status_info}**"
@@ -167,8 +163,7 @@ class Sudo(*STANDARD_FEATURES, *OPTIONAL_FEATURES, Cog):
         elif status.lower() == "listening":
             try:
                 await self.bot.change_presence(
-                    activity=Activity(
-                        type=ActivityType.listening, name=status_info)
+                    activity=Activity(type=ActivityType.listening, name=status_info)
                 )
                 await ctx.send(
                     f"Successfully changed listening status to **{status_info}**"
@@ -226,8 +221,7 @@ class Sudo(*STANDARD_FEATURES, *OPTIONAL_FEATURES, Cog):
         embed = Embed(title="BOT STATISTICS", color=Color.blue())
         embed.add_field(name="**❯ General**", value=general, inline=False)
         embed.add_field(name="**❯ System**", value=system, inline=False)
-        embed.add_field(name="**❯ Shard info**",
-                        value=shard_info, inline=False)
+        embed.add_field(name="**❯ Shard info**", value=shard_info, inline=False)
 
         process = psutil.Process()
         with process.oneshot():
@@ -250,9 +244,7 @@ class Sudo(*STANDARD_FEATURES, *OPTIONAL_FEATURES, Cog):
                 """
             )
             embed.add_field(
-                name="**❯ Memory info**",
-                value=value,
-                inline=False,
+                name="**❯ Memory info**", value=value, inline=False,
             )
 
         uname = platform.uname()
@@ -268,9 +260,7 @@ class Sudo(*STANDARD_FEATURES, *OPTIONAL_FEATURES, Cog):
             """
         )
         embed.add_field(
-            name="**❯ System info**",
-            value=system,
-            inline=False,
+            name="**❯ System info**", value=system, inline=False,
         )
 
         embed.set_author(

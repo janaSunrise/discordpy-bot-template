@@ -24,8 +24,7 @@ class EmbedPages(ListPageSource):
         """Return the stored embed for current page."""
         max_pages = self.get_max_pages()
         if max_pages > 1:
-            embed.set_footer(
-                text=f"Page {menu.current_page + 1} of {max_pages}.")
+            embed.set_footer(text=f"Page {menu.current_page + 1} of {max_pages}.")
         return embed
 
     async def start(self, ctx: Context, **menupages_kwargs) -> None:
@@ -63,7 +62,7 @@ class HelpPages(EmbedPages):
 
     @staticmethod
     def _split_fields(
-            fields: t.List[field], initial_length: int = 0
+        fields: t.List[field], initial_length: int = 0
     ) -> t.List[t.List[field]]:
         split_fields = []
         index = 0
@@ -94,7 +93,7 @@ class HelpPages(EmbedPages):
 
     @staticmethod
     def _make_group_embeds(
-            split_messages: t.List[str], initial_embed: Embed
+        split_messages: t.List[str], initial_embed: Embed
     ) -> t.List[Embed]:
         embeds = []
         initial_embed.add_field(name="Subcommands:", value=split_messages[0])
@@ -115,12 +114,11 @@ class HelpPages(EmbedPages):
 
     @staticmethod
     def _make_cog_embeds(
-            fields: t.List[t.List[field]], initial_embed: Embed
+        fields: t.List[t.List[field]], initial_embed: Embed
     ) -> t.List[Embed]:
         embeds = []
         for fld in fields[0]:
-            initial_embed.add_field(
-                name=fld.name, value=fld.value, inline=False)
+            initial_embed.add_field(name=fld.name, value=fld.value, inline=False)
         embeds.append(initial_embed)
 
         for page, page_fields in enumerate(fields[1:]):
@@ -137,7 +135,7 @@ class HelpPages(EmbedPages):
 
     @classmethod
     def split_group_commands(
-            cls, cmd_messages: t.List[str], initial_embed: Embed
+        cls, cmd_messages: t.List[str], initial_embed: Embed
     ) -> "HelpPages":
         """
         Automatically split the given group command messages into multiple embeds.
@@ -151,10 +149,9 @@ class HelpPages(EmbedPages):
 
     @classmethod
     def split_cog_commands(
-            cls, fields: t.List[field], initial_embed: Embed
+        cls, fields: t.List[field], initial_embed: Embed
     ) -> "HelpPages":
-        split_fields = cls._split_fields(
-            fields, len(initial_embed.description))
+        split_fields = cls._split_fields(fields, len(initial_embed.description))
         embeds = cls._make_cog_embeds(split_fields, initial_embed)
         return cls(embeds)
 
@@ -164,9 +161,7 @@ class HelpCommand(BaseHelpCommand):
 
     def __init__(self):
         super().__init__(
-            command_attrs={
-                "help": "Shows help for given command / all commands"
-            }
+            command_attrs={"help": "Shows help for given command / all commands"}
         )
 
     def command_not_found(self, string: str) -> str:
@@ -190,8 +185,7 @@ class HelpCommand(BaseHelpCommand):
         parent = command.full_parent_name
         command_prefix = self.context.prefix
 
-        command_name = str(
-            command) if not parent else f"{parent} {command.name}"
+        command_name = str(command) if not parent else f"{parent} {command.name}"
         command_syntax = f"{command_prefix}{command_name} {command.signature}"
         command_help = f"{command.help or 'No description provided.'}"
 
@@ -269,7 +263,7 @@ class HelpCommand(BaseHelpCommand):
         return embed
 
     async def _format_cog(
-            self, cog: t.Optional[Cog], commands: t.Optional[t.List[Command]] = None
+        self, cog: t.Optional[Cog], commands: t.Optional[t.List[Command]] = None
     ) -> t.Union[Embed, HelpPages]:
         if cog:
             cog_description = (
@@ -296,12 +290,7 @@ class HelpCommand(BaseHelpCommand):
         for command in commands:
             _, command_syntax, command_help, _ = await self._describe_command(command)
 
-            fields.append(
-                field(
-                    name=f"**`{command_syntax}`**",
-                    value=command_help,
-                )
-            )
+            fields.append(field(name=f"**`{command_syntax}`**", value=command_help,))
 
         length = 0
         for fld in fields:
@@ -316,7 +305,7 @@ class HelpCommand(BaseHelpCommand):
         return embed
 
     async def send_bot_help(
-            self, mapping: t.Dict[t.Optional[Cog], t.List[Command]]
+        self, mapping: t.Dict[t.Optional[Cog], t.List[Command]]
     ) -> None:
         """Send general bot help."""
         sorted_cogs = sorted(

@@ -5,14 +5,24 @@ import discord
 from discord import Color, Embed
 from discord.ext import menus
 from discord.ext.commands import (
-    BotMissingPermissions, BotMissingRole,
-    BucketType, Cog, CommandOnCooldown, Context,
-    DisabledCommand, ExpectedClosingQuoteError,
+    BotMissingPermissions,
+    BotMissingRole,
+    BucketType,
+    Cog,
+    CommandOnCooldown,
+    Context,
+    DisabledCommand,
+    ExpectedClosingQuoteError,
     InvalidEndOfQuotedStringError,
-    MaxConcurrencyReached, MissingPermissions,
-    MissingRole, NoPrivateMessage, NotOwner,
-    NSFWChannelRequired, PrivateMessageOnly,
-    UnexpectedQuoteError, errors
+    MaxConcurrencyReached,
+    MissingPermissions,
+    MissingRole,
+    NoPrivateMessage,
+    NotOwner,
+    NSFWChannelRequired,
+    PrivateMessageOnly,
+    UnexpectedQuoteError,
+    errors,
 )
 from loguru import logger
 
@@ -27,21 +37,17 @@ class ErrorHandler(Cog):
 
     @staticmethod
     async def error_embed(
-            ctx: Context,
-            title: t.Optional[str] = None,
-            description: t.Optional[str] = None,
+        ctx: Context,
+        title: t.Optional[str] = None,
+        description: t.Optional[str] = None,
     ) -> None:
         """Utility method to send error embeds easily."""
         await ctx.send(
-            embed=Embed(
-                title=title,
-                description=description,
-                color=Color.red()
-            )
+            embed=Embed(title=title, description=description, color=Color.red())
         )
 
     async def command_syntax_error(
-            self, ctx: Context, error: errors.UserInputError
+        self, ctx: Context, error: errors.UserInputError
     ) -> None:
         """Handle invalid command syntax error."""
         command = ctx.command
@@ -141,7 +147,7 @@ class ErrorHandler(Cog):
                 ctx,
                 title="Command on cooldown",
                 description=f"The command `{ctx.command}` is on cooldown {cooldowns[error.cooldown.type]} You can "
-                            f"retry in `{error.retry_after}`",
+                f"retry in `{error.retry_after}`",
             )
             return
 
@@ -173,12 +179,11 @@ class ErrorHandler(Cog):
             return
 
         elif (
-                isinstance(error.original, discord.HTTPException)
-                and error.original.code == 50034
+            isinstance(error.original, discord.HTTPException)
+            and error.original.code == 50034
         ):
             await self.error_embed(
-                ctx,
-                "❌ You can only bulk delete messages that are under 14 days old",
+                ctx, "❌ You can only bulk delete messages that are under 14 days old",
             )
             return
 
@@ -219,11 +224,11 @@ class ErrorHandler(Cog):
             NSFWChannelRequired: f"The command `{ctx.command}` can only be ran in a NSFW channel.",
             DisabledCommand: f"The command `{ctx.command}` has been disabled.",
             ExpectedClosingQuoteError: f"You missed a closing quote in the parameters passed to the `{ctx.command}` "
-                                       f"command.",
+            f"command.",
             UnexpectedQuoteError: f"There was an unexpected quote in the parameters passed to the `{ctx.command}` "
-                                  f"command.",
+            f"command.",
             InvalidEndOfQuotedStringError: f"The quoted argument must be separated from the others with space in "
-                                           f"`{ctx.command}`",
+            f"`{ctx.command}`",
         }
 
         error_message = error_messages.get(type(error))
