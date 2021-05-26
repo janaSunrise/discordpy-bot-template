@@ -76,6 +76,8 @@ You can quickly get started by the following steps.
     pipenv run start
     ```
 
+**NOTE**: For detailed setup and instructions, See below.
+
 ## Project and code structure information
 
 - Autoloader: The project comes with an autoloader for cogs, that finds all the 
@@ -121,9 +123,6 @@ This is a guide to help you self host the Bot, and use it privately which simpli
 a bot for yourself and developed it further.
 
 ## Docker
-
-**NOTE**: The docker is being tested and being made to worked properly. It hasn't been working perfectly yet. I advise
-to use non docker steps until the docker works perfectly when deploying / running. Sorry for this inconvenience.
 
 Docker is an easy way of containerizing and delivering your applications quickly and easily, in an 
 convenient way. It's really simple to get started with this, with docker handling all the installation
