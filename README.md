@@ -87,6 +87,10 @@ to load all of them, as the core cog, or have a file with a setup function.
 - `core/` Directory is preserved for keeping important things for your bot, such as
 converters, decorators and other tools which are really necessary.
 
+- `utils/` directory has several utility functions to make the experience better and work less
+  when making the bot. It has things like `EmbedPages` for pagination, `humanize_time` to
+  convert timedeltas into huma readable format and more!
+
 - `config.py` contains the configuration and attributes for the bot to use to run and display 
 in commands.
 
