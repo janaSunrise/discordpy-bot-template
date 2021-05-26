@@ -8,12 +8,24 @@
 
 <p align="center">
 
+<a href="https://www.python.org/">
+    <img src="http://ForTheBadge.com/images/badges/made-with-python.svg" alt="Made with Python" />
+</a>
+
+</p>
+
+<p align="center">
+
 <a href="https://github.com/janaSunrise/discordpy-bot-template">
     <img src="https://img.shields.io/github/languages/code-size/janaSunrise/discordpy-bot-template" alt="Code Size" />
 </a>
 
-<a href="https://discord.gg/cSC5ZZwYGQ">
-    <img src="https://discordapp.com/api/guilds/695008516590534758/widget.png?style=shield" alt="Discord" />
+<a href="https://discord.gg/MKC4qna4Gz">
+    <img src="https://discordapp.com/api/guilds/835940276869791816/widget.png?style=shield" alt="Discord" />
+</a>
+
+<a href="https://gitHub.com/janaSunrise/discordpy-bot-template/graphs/commit-activity">
+    <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" alt="Maintenance" />
 </a>
 
 </p>
@@ -21,14 +33,48 @@
 <h3 align="center">
   <a href="https://github.com/janaSunrise/discordpy-bot-template/issues">Report a bug</a>
   <span> · </span>
-  <a href="https://discord.gg/cSC5ZZwYGQ">Discord</a>
+  <a href="https://discord.gg/MKC4qna4Gz">Discord</a>
 </h3>
+
+## ✨ Features!
+
+- Modular structure to make large and small bots pretty easily.
+- Component based structure to make organizing the code easiest
+- Docker and Pipenv supported inbuilt to make the deployment and development workflow quick.
+- Well documented, making it easy for everyone to understand.
+- Auto loaders to load the cogs added quickly without adding them manually
+- Pre added `owner` cog, Help command and Error handler to make those things ignorable and focus
+  on functionality.
+- Inbuilt logging support with beautiful UI for easy reference and logging.
 
 ## Requirements
 
 - Python [3.7 or above] - https://www.python.org/downloads/
 - Git - https://git-scm.com/download/
-- Pipenv [Python package] - Install it using `pip install pipenv`
+- Pipenv [Python package for virtual envs] - Install it using `pip install pipenv`
+
+## Quickstart
+
+You can quickly get started by the following steps.
+
+- Use this template by clicking **use this template** button in the top right side and make a repository 
+  of your own, or Clone the repo, whichever feels better.
+- You need to have either docker with docker-compose or Python with Pipenv (Mentioned above) to run 
+  this project.
+- Create a discord bot in the [panel](https://discord.com/developers/applications), Ignore this if done.
+- Configure the environmental variables by renaming the `.env.example` file to `.env` with the respective 
+  values.
+- Here are the commands to quickly get it working:
+  - **Docker**
+    ```sh
+    docker-compose up --build --env-file .env
+    ```
+  - **Python with Pipenv**
+    ```sh
+    pip install pipenv
+    pipenv sync -d
+    pipenv run start
+    ```
 
 ## Project and code structure information
 
@@ -81,7 +127,7 @@ to use non docker steps until the docker works perfectly when deploying / runnin
 
 Docker is an easy way of containerizing and delivering your applications quickly and easily, in an 
 convenient way. It's really simple to get started with this, with docker handling all the installation
-and other tasks.Configure the environmental variables by renaming the `.env.example` file to `.env` with the respective 
+and other tasks. Configure the environmental variables by renaming the `.env.example` file to `.env` with the respective values.
 values. Then, run `docker-compose --env-file .env up` after getting the project and config ready.
 
 **Docker mini guide:**
@@ -111,15 +157,17 @@ be able to do it, this is the perfect method to get started with the self-hostin
 If you have various suggestions, questions or want to discuss things with our community, Have a look at
 [Github discussions](https://github.com/janaSunrise/discordpy-bot-template/discussions) or join our discord server!
 
-[![Discord](https://discordapp.com/api/guilds/695008516590534758/widget.png?style=shield)](https://discord.gg/cSC5ZZwYGQ)
+[![Discord](https://discordapp.com/api/guilds/835940276869791816/widget.png?style=shield)](https://discord.gg/MKC4qna4Gz)
 
 ## 🙌 Show your support
 
 Be sure to leave a ⭐️ if you like the project!
 
 ## ▶ Links
+
 - [Official Documentation](https://discordpy.readthedocs.io/en/latest/)
 - [Raise an Issue](https://github.com/janaSunrise/discordpy-bot-template/issues)
+
 
 ## License
 
