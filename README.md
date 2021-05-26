@@ -173,10 +173,5 @@ Be sure to leave a ⭐️ if you like the project!
 
 This project uses Apache 2.0. Please be sure to follow the rules and the license.
 
-<p align="center">
 
-Made by janaSunrise with ❤
-
-</p>
-
-
+<div align="center">Made by janaSunrise with ❤</div>
