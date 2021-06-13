@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   bot:
@@ -6,12 +6,13 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./logs:/bot/logs
+      - ./logs:/bot/logs:rw
       - .:/bot:ro
     tty: true
     env_file:
       - .env
-    restart: on-failure
+    init: true
+    restart: always
     networks:
       - common-shared-network
 
