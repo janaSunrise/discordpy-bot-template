@@ -38,14 +38,14 @@
 
 ## ✨ Features!
 
-- Modular structure to make large and small bots pretty easily.
+- Modular structure to make any type of bot pretty easily.
 - Component based structure to make organizing the code easiest
-- Docker and Pipenv supported inbuilt to make the deployment and development workflow quick.
+- Docker and Pipenv support inbuilt to make the deployment and development workflow quick and easy.
 - Well documented, making it easy for everyone to understand.
-- Auto loaders to load the cogs added quickly without adding them manually
+- Auto loaders to load the cogs added quickly without adding them manually.
 - Pre added `owner` cog, Help command and Error handler to make those things ignorable and focus
   on functionality.
-- Inbuilt logging support with beautiful UI for easy reference and logging.
+- Inbuilt logging support with Intuitive look for easy reference and logging.
 
 ## Requirements
 
@@ -61,7 +61,7 @@ You can quickly get started by the following steps.
   of your own, or Clone the repo, whichever feels better.
 - You need to have either docker with docker-compose or Python with Pipenv (Mentioned above) to run 
   this project.
-- Create a discord bot in the [panel](https://discord.com/developers/applications), Ignore this if done.
+- Create a discord bot in the [Discord developer panel](https://discord.com/developers/applications), Ignore this if done.
 - Configure the environmental variables by renaming the `.env.example` file to `.env` with the respective 
   values.
 - Here are the commands to quickly get it working:
