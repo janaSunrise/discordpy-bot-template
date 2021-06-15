@@ -33,6 +33,8 @@
 <h3 align="center">
   <a href="https://github.com/janaSunrise/discordpy-bot-template/issues">Report a bug</a>
   <span> · </span>
+  <a href="https://github.com/janaSunrise/discordpy-bot-template/discussions">Discussions</a>
+  <span> · </span>
   <a href="https://discord.gg/MKC4qna4Gz">Discord</a>
 </h3>
 
